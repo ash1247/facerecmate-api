@@ -15,17 +15,15 @@ const PORT = process.env.PORT;
 const db = knex({
 	client: 'pg',
 	connection: {
-		host: '127.0.0.1',
-		user: 'ash1247',
-		password: 'root96@$#',
-		database: 'smart-brain'
+		connectionString: process.env.DATABASE_URL,
+		ssl: true
 	}
 });
 
 app.use(bodyParser.json());
 app.use(cors());
 
-app.get('/', (req, res) => { res.json("it is working") });	
+app.get('/', (req, res) => { res.send("it is working") });	
 app.get("/profile/:id", profile.handleProfileGet(db, bcrypt));
 app.post("/signIn", (req, res) => { signIn.handleSignIn(req, res, db, bcrypt) });
 app.post("/register", (req, res) => { register.handleRegister(req, res, db, bcrypt) });
