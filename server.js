@@ -10,7 +10,7 @@ const signIn = require('./controllers/signIn');
 const profile = require('./controllers/profile');
 const image = require('./controllers/image');
 
-const PORT = process.env.port;
+const PORT = process.env.PORT;
 
 const db = knex({
 	client: 'pg',

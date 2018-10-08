@@ -2,11 +2,11 @@
   "name": "node",
   "version": "1.0.0",
   "description": "",
-  "main": "script.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
-  "author": "",
+  "author": "ash1247",
   "license": "ISC",
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
